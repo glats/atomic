@@ -1,0 +1,5 @@
+target/
+.mvn/
+ms-app*
+## Plugin vscode ##
+.history/
