@@ -1,0 +1,15 @@
+version: '3'
+services:
+  golang:
+    # will build ./docker/web/Dockerfile
+    build: ./golang/
+    ports:
+     - "8003:8003"
+  nodejs:
+    build: ./node-js/
+    ports:
+     - "8002:8002"
+  python:
+    build: ./python/
+    ports:
+     - "8004:8004"

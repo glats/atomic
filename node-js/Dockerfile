@@ -1,3 +1,7 @@
 FROM node:alpine
+COPY . /app
+WORKDIR /app
+RUN npm install
 EXPOSE 8002
-CMD [ "node", "index.js" ]
+ENTRYPOINT [ "node" ]
+CMD [ "index.js" ]
