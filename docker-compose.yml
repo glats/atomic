@@ -4,12 +4,16 @@ services:
     # will build ./docker/web/Dockerfile
     build: ./golang/
     ports:
-     - "8003:8003"
+     - "8001:8001"
   nodejs:
-    build: ./node-js/
+    build: ./nodejs/
     ports:
-     - "8002:8002"
+     - "8003:8003"
+  php:
+    build: ./php/
+    ports:
+     - "8004:8004"
   python:
     build: ./python/
     ports:
-     - "8004:8004"
+     - "8005:8005"
