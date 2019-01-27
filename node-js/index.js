@@ -6,5 +6,5 @@ app.listen(8002, () => {
 });
 
 app.get("/", (req, res) => {
-    res.json("Hello World");
+    res.json("Hello Im Nodejs and im Running on port 8002");
 });
