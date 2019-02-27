@@ -5,15 +5,20 @@ services:
     build: ./golang/
     ports:
      - "8001:8001"
+    container_name: "atomic_golang"
   nodejs:
     build: ./nodejs/
     ports:
      - "8003:8003"
+    container_name: "atomic_node"
   php:
     build: ./php/
     ports:
      - "8004:8004"
+    container_name: "atomic_php"
   python:
     build: ./python/
     ports:
      - "8005:8005"
+    container_name: "atomic_python"
+
