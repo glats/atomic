@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: atomics
+spec:
+  containers:
+  - name: atomic-golang
+    image: atomic_golang
+    imagePullPolicy: Never
+    ports:
+    - containerPort: 8001
+  - name: atomic-nodejs
+    image: atomic_nodejs
+    imagePullPolicy: Never
+    ports:
+    - containerPort: 8003
+  - name: atomic-php
+    image: atomic_php
+    imagePullPolicy: Never
+    ports:
+    - containerPort: 8004
+  - name: atomic-python
+    image: atomic_python
+    imagePullPolicy: Never
+    ports:
+    - containerPort: 8005

@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: atomic-deploy
+spec:
+  selector:
+    matchLabels:
+      app: atomic
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: atomic
+    spec:
+      containers:
+      - name: atomic-golang
+        image: atomic_golang
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8001
+      - name: atomic-nodejs
+        image: atomic_nodejs
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8003
+      - name: atomic-php
+        image: atomic_php
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8004
+      - name: atomic-python
+        image: atomic_python
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8005
