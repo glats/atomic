@@ -1,9 +1,9 @@
-FROM openjdk:8-jdk-alpine
-RUN addgroup -S atomic && adduser -S atomic -G atomic
-ENV HOME=/home/atomic
-RUN chown -R atomic:atomic $HOME/*
-USER atomic
-COPY app.jar $HOME/app.jar
-WORKDIR /home/atomic
+FROM maven:3.5-jdk-8 AS build
+COPY ms /usr/src/app/ms
+RUN mvn -f /usr/src/app/ms/pom.xml clean package
+
+#using Google's distroless base image, which strives to provide just enough run-time for a java app.
+FROM gcr.io/distroless/java 
+COPY --from=build /usr/src/app/app.jar /usr/app/app.jar  
 EXPOSE 8002
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/usr/app/app.jar"]

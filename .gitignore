@@ -1,9 +1,6 @@
 target/
 .mvn/
-ms-app*
 node_modules/
-## Plugin vscode ##
-.history/
 /vendor/
 /logs/*
 !/logs/README.md
