@@ -20,7 +20,33 @@ spec:
   selector:
     app: golang
   ports:
-    - port: 8001 # Default port for image
+    - port: 9001 # Default port for image
+
+---
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: java-app
+  labels:
+    app: java
+spec:
+  containers:
+    - name: java-app
+      image: atomic_java
+      imagePullPolicy: Never
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: java-service
+spec:
+  selector:
+    app: java
+  ports:
+    - port: 9002
 
 ---
 
@@ -46,7 +72,7 @@ spec:
   selector:
     app: nodejs
   ports:
-    - port: 8003
+    - port: 9003
 
 ---
 
@@ -72,7 +98,7 @@ spec:
   selector:
     app: php
   ports:
-    - port: 8004
+    - port: 9004
 
 ---
 
@@ -98,4 +124,4 @@ spec:
   selector:
     app: python
   ports:
-    - port: 8004
+    - port: 9005

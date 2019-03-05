@@ -38,10 +38,10 @@ This gonna enable the Ingress plugin
 
 Then we gonna up the services into minikube:
 ```
-$ kubectl apply -f services.yml
+$ kubectl apply -f services.yaml
 ```
 
 And finally configure Ingress to able the services:
 ```
-$ kubectl apply -f ingress.yml
+$ kubectl apply -f ingress.yaml
 ```

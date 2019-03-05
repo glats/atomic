@@ -1,6 +1,6 @@
 FROM php:alpine
 COPY . /app
 WORKDIR /app
-EXPOSE 8004
+EXPOSE 9004
 ENTRYPOINT ["php"]
-CMD ["-S", "0.0.0.0:8004", "-t" ,"."]
+CMD ["-S", "0.0.0.0:9004", "-t" ,"."]

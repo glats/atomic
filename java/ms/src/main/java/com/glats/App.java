@@ -15,18 +15,18 @@ public class App {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception {
-        HttpServer server = HttpServer.create(new InetSocketAddress(8002), 0);
+        HttpServer server = HttpServer.create(new InetSocketAddress(9002), 0);
         server.createContext("/", new MyHandler());
         server.setExecutor(null); // creates a default executor
         server.start();
-        System.out.println("Java runing in 8002");
+        System.out.println("Java runing in 9002");
     }
 
     static class MyHandler implements HttpHandler {
 
         @Override
         public void handle(HttpExchange t) throws IOException {
-            String response = "Hello Im java and im Running on port 8002";
+            String response = "Hello Im java and im Running on port 9002";
             t.sendResponseHeaders(200, response.length());
             OutputStream os = t.getResponseBody();
             os.write(response.getBytes());
