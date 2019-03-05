@@ -2,7 +2,7 @@
 This is a simple POC that shows how build an polyglot microservices based infrastructure with docker and kubernetes.
 
 The name **atomic** stands for: little apps (atoms) working together without matters his language. And follows the UNIX philosophy: "
-The Unix philosophy emphasizes building simple, short, clear, modular, and extensible code that can be easily maintained and repurposed by developers other than its creators. The Unix philosophy favors composability as opposed to monolithic design." or "do one thing and do it well"
+The Unix philosophy emphasizes building simple, short, clear, modular, and extensible code that can be easily maintained and repurposed by developers other than its creators. The Unix philosophy favors composability as opposed to monolithic design." according [wikipedia](https://en.wikipedia.org/wiki/Unix) or "do one thing and do it well"
 
 ## Requirements
 For linux you need:
