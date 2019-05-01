@@ -45,3 +45,8 @@ And finally configure Ingress to able the services:
 ```
 $ kubectl apply -f ingress.yaml
 ```
+
+Display atomic ingress information
+```
+$ kubectl describe ingress atomic-ingress
+```
